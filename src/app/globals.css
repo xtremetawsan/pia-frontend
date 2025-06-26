@@ -55,9 +55,31 @@ a {
 .pageTitle {
   margin-bottom: 20px;
 }
+.menu-link {
+  width: 100%;
+  display: block;
+  font-size: 14px;
+  padding: 10px;
+  font-weight: 600;
+}
+.menu-link:hover {
+  background: #ddd;
+}
 
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
+  }
+}
+
+@media only screen and (max-width: 720px) {
+  .mobileOnly {
+    display: block;
+  }
+}
+
+@media only screen and (min-width: 720px) {
+  .mobileOnly {
+    display: none;
   }
 }

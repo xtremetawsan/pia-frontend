@@ -1,0 +1,17 @@
+.userCard {
+  display: flex;
+  border: solid 1px #ddd;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  flex-wrap: wrap;
+  width: 200px;
+  max-width: 200px;
+  margin-right: 15px;
+  margin-bottom: 15px;
+}
+.userName {
+  width: 100%;
+}
+
+@media only screen and (max-width: 720px) {
+}

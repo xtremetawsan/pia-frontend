@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import UserCard from "./componets/UserCard";
+import styles from "./page.module.css";
 
 export default function Page() {
   const [users, setUsers] = useState(null);
@@ -19,8 +20,8 @@ export default function Page() {
 
   return (
     <>
-      <h2 className="pageTitle">Boş Sayfa</h2>
-      <div className="cardsContainer">
+      <h2 className="pageTitle">Kullanıcılar</h2>
+      <div className={styles.cardsContainer}>
         {users ? (
           users.map((user: any) => {
             return (

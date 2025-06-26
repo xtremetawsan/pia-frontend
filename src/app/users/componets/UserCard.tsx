@@ -1,4 +1,6 @@
 import Image from "next/image";
+import Link from "next/link";
+import styles from "./usercard.module.css";
 
 export default function UserCard({
   id,
@@ -8,15 +10,19 @@ export default function UserCard({
   avatar,
 }: IUser) {
   return (
-    <div className="user-card">
-      <div className="user-image">
-        <Image src={avatar} width={150} height={150} alt={firstName} />
-      </div>
-      <h3>
-        {firstName} {lastName}
-      </h3>
-      <p>{department}</p>
-    </div>
+    <>
+      <Link href={"/users/" + id}>
+        <div className={styles.userCard}>
+          <div className="user-image">
+            <Image src={avatar} width={200} height={200} alt={firstName} />
+          </div>
+          <h3 className={styles.userName}>
+            {firstName} {lastName}
+          </h3>
+          <p>{department}</p>
+        </div>
+      </Link>
+    </>
   );
 }
 export interface IUser {
