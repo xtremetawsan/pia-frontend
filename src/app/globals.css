@@ -49,6 +49,12 @@ a {
   display: flex;
   width: calc(100% - 160px);
 }
+.contentBody {
+  padding: 20px;
+}
+.pageTitle {
+  margin-bottom: 20px;
+}
 
 @media (prefers-color-scheme: dark) {
   html {
