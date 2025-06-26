@@ -1,0 +1,15 @@
+.userList {
+  display: block;
+}
+.addNewLink {
+  position: relative;
+  margin-bottom: 15px;
+  right: 0;
+  float: right;
+  border: solid 1px #ddd;
+  border-radius: 5px;
+  padding: 5px 10px;
+}
+.addNewLink:hover {
+  background-color: #ddd;
+}

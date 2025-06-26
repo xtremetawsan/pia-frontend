@@ -9,6 +9,9 @@ export default function Sidebar() {
       <Link href={"/users"} className="menu-link">
         Kullanıcılar
       </Link>
+      <Link href={"/usermanagement"} className="menu-link">
+        Kullanıcıları Yönet
+      </Link>
     </div>
   );
 }

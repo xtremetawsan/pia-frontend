@@ -51,6 +51,7 @@ a {
 }
 .contentBody {
   padding: 20px;
+  width: 100%;
 }
 .pageTitle {
   margin-bottom: 20px;
