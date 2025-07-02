@@ -67,6 +67,37 @@ a {
   background: #ddd;
 }
 
+form {
+  border: solid 1px #ddd;
+  padding: 20px;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 600px;
+}
+form input {
+  display: block;
+  border: 1px solid #ddd;
+  width: 100%;
+  margin-bottom: 10px;
+  height: 25px;
+  background: #fff;
+  padding: 5px 10px;
+  color: #222;
+}
+form button {
+  height: 30px;
+  background: #fff;
+  padding: 5px 10px;
+  border: 1px solid #ddd;
+  width: 150px;
+  color: #222;
+  clear: both;
+  display: block;
+  border-radius: 5px;
+  background: #ddd;
+  font-weight: 600;
+}
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;

@@ -5,13 +5,19 @@ import { IUser } from "../../../users/componets/UserCard";
 import Image from "next/image";
 import styles from "./list.module.css";
 
-export default function UserList({ user }: IUser) {
+export interface IUserListProps {
+  onDelete: () => void;
+  user?: IUser;
+}
+export default function UserList({ user, onDelete }: IUserListProps) {
   const handleUserDelete = (id) => {
     fetch("https://685a501f9f6ef9611155d357.mockapi.io/users/" + id, {
       method: "DELETE",
     })
       .then((res) => res.json()) // or res.json()
-      .then((res) => {});
+      .then((res) => {
+        onDelete();
+      });
   };
 
   return (
@@ -28,12 +34,14 @@ export default function UserList({ user }: IUser) {
           <Link href={"/usermanagement/edit/2"}>
             <FaEdit />
           </Link>
-
-          <FaTrash
+          <span
+            className={styles.deleteIcon}
             onClick={() => {
               handleUserDelete(user?.id);
             }}
-          />
+          >
+            <FaTrash className="icon" />
+          </span>
         </span>
       </div>
     </div>

@@ -1,6 +1,6 @@
 import Link from "next/link";
 
-export default function Sidebar() {
+export default async function Sidebar() {
   return (
     <div className="sideBar">
       <Link href={"/"} className="menu-link">

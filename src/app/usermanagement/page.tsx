@@ -1,5 +1,5 @@
 "use client";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import styles from "./page.module.css";
 import UserList from "./components/UserList";
 import { FaPlus } from "react-icons/fa";
@@ -7,13 +7,20 @@ import Link from "next/link";
 
 export default function Page() {
   const [users, setUsers] = useState(null);
+  const [isDeleted, setIsDeleted] = useState(false);
 
   const getUsers = () => {
     fetch("https://685a501f9f6ef9611155d357.mockapi.io/users/")
       .then((response) => response.json())
       .then((data) => {
+        setIsDeleted(false);
         setUsers(data);
       });
+  };
+
+  const handleDelete = () => {
+    setIsDeleted(true);
+    getUsers();
   };
 
   useEffect(() => {
@@ -29,7 +36,16 @@ export default function Page() {
       <div className={styles.userList}>
         {users ? (
           users.map((user) => {
-            return <UserList user={user} key={user?.id} />;
+            return (
+              <UserList
+                user={user}
+                key={user?.id}
+                onDelete={(res) => {
+                  console.log(res);
+                  handleDelete();
+                }}
+              />
+            );
           })
         ) : (
           <div>Kayıtlı kullanıcı bulunamadı...</div>
