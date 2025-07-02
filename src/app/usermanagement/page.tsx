@@ -14,7 +14,7 @@ export default function Page() {
       .then((response) => response.json())
       .then((data) => {
         setIsDeleted(false);
-        setUsers(data);
+        setUsers(data.reverse());
       });
   };
 
@@ -41,7 +41,6 @@ export default function Page() {
                 user={user}
                 key={user?.id}
                 onDelete={(res) => {
-                  console.log(res);
                   handleDelete();
                 }}
               />

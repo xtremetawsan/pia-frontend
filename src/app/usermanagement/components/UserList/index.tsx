@@ -31,7 +31,7 @@ export default function UserList({ user, onDelete }: IUserListProps) {
       <div className="department">{user?.department}</div>
       <div className="process">
         <span>
-          <Link href={"/usermanagement/edit/2"}>
+          <Link href={"/usermanagement/edit/" + user?.id}>
             <FaEdit />
           </Link>
           <span
